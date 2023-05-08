@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+{% for i in obj %}
+<h1>{{i.name1}}</h1>
+<p>{{i.name2}}</p>
+{% endfor %}
+
+{% for t in data %}
+<h1>{{t.title}}</h1>
+<p>{{t.text}}</p>
+{% endfor %}
+{% endblock content %}

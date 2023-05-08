@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+      <div class="content-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="card" data-aos="fade-up">
+                <div class="card-body">
+                  <div class="aboutus-wrapper">
+                    <h1 class="mt-5">
+                      {{ new.title  }}
+                    </h1>
+                    <p class="font-weight-600 fs-15">
+                      {{ new.text | safe}}
+                    </p>
+                    <br>
+                    <img
+                      src="http://127.0.0.1:8000/media/{{ new.image }}"
+                      alt="banner"
+                      class="img-fluid mb-5"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock content %}

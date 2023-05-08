@@ -1,0 +1,427 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+        <!-- partial -->
+        <div class="flash-news-banner">
+          <div class="container">
+            <div class="d-lg-flex align-items-center justify-content-between">
+              <div class="d-flex align-items-center">
+                <span class="badge badge-dark mr-3">So'ngi yangiliklar</span>
+                <p class="mb-0">
+                  Lorem Ipsum 1500-yillardan beri sanoatning standart qo'g'irchoq matni bo'lib kelgan.
+                </p>
+              </div>
+              <div class="d-flex">
+                <span class="mr-3 text-danger">Payshanba, Avgust 18, 2022</span>
+                <span class="text-danger">30°C, O'zbekiston</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+
+
+<!-- Mirziyoyev qator -->
+        <div class="content-wrapper">
+
+          <!-- Sikl ochilishi -->
+          {% for post in object_list %}
+          {% if forloop.counter0 < 1 %}
+          <div class="container">
+            <div class="row" data-aos="fade-up">
+              <div class="col-xl-8 stretch-card grid-margin">
+                <div class="position-relative">
+                  <a href="#">
+
+                    <!-- rasm sharti -->
+                    {% if post.image %}
+                    <img 
+                    src="{{post.image.url}}"
+                    alt="banner"
+                    class="img-fluid">
+                    {% endif %}
+
+                  </a>
+                  <div class="banner-content">
+                    <div class="badge badge-danger fs-12 font-weight-bold mb-3">
+                      global yangiliklar
+                    </div>
+                    <h1 class="mb-2">
+
+                      <!-- Bazadagi sarlavxa joyi -->
+                      {{ post.title }}
+                    </h1>
+                    <div class="fs-12">
+                      <span class="mr-2">Surat</span>10 daqiqa oldin olingan suratlar
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Sikl yopilishi -->
+              {% endif %}
+              {% endfor %}
+
+
+
+
+<!-- Mirziypyev ong tomonidagi qator -->
+
+              <div class="col-xl-4 stretch-card grid-margin">
+                <div class="card bg-dark text-white">
+                  <div class="card-body">
+                    <h2>So'ngi yangiliklar</h2>
+                    {% for post in object_list %}
+                    {% if 0 < forloop.counter0 and 4 > forloop.counter0 %}
+                    <div
+                      class="d-flex border-bottom-blue pt-3 pb-4 align-items-center justify-content-between"
+                    >
+                      <div class="pr-3" >
+                        <h5>{{post.title}}</h5>
+                        <div class="fs-12">
+                          <span class="mr-2">Surat </span>10 daqiqa oldin olingan
+                        </div>
+                      </div>
+                      <div class="rotate-img">
+                        {% if post.image %}
+                        <img
+                          src="{{post.image.url}}"
+                          alt="thumb"
+                          class="img-fluid img-lg"
+                        />
+                        {% endif %}
+                      </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+<!-- Turkum qator -->
+            <div class="row" data-aos="fade-up">
+              <div class="col-lg-3 stretch-card grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                    <h2>Turkum</h2>
+                    <ul class="vertical-menu">
+                      <li><a href="#">Siyosat</a></li>
+                      <li><a href="#">Xalqaro</a></li>
+                      <li><a href="#">Moliya</a></li>
+                      <li><a href="#">Sog'liqni saqlash</a></li>
+                      <li><a href="#">Texnalogiya</a></li>
+                      <li><a href="#">Ishlar</a></li>
+                      <li><a href="#">OAV</a></li>
+                      <li><a href="#">Mamuriyat</a></li>
+                      <li><a href="#">Sport</a></li>
+                      <li><a href="#">Oyin</a></li>
+                      <li><a href="#">Art</a></li>
+                      <li><a href="#">Bolalar</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-9 stretch-card grid-margin">
+                <div class="card">
+                  <div class="card-body">
+  
+
+<!-- Turkum qator ong tomoni -->
+
+                    <div class="row">
+                      {% for i in object_list %}
+                      {% if 3 < forloop.counter0 and 7 > forloop.counter0 %}
+                      <div class="col-sm-4 grid-margin">
+                        <div class="position-relative">
+                          <div class="rotate-img">
+                            {% if i.image %}
+                            <img
+                              src="{{i.image.url}}"
+                              alt="thumb"
+                              class="img-fluid"
+                            />
+                            {% endif %}
+                          </div>
+                          <div class="badge-positioned">
+                            <span class="badge badge-danger font-weight-bold"
+                              >So'ngi yangiliklar</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-8  grid-margin">
+                        <h2 class="mb-2 font-weight-600">
+                          {{i.title}}
+                        </h2>
+                        <div class="fs-13 mb-2">
+                          <span class="mr-2">Surat</span>10 daqiqa oldin olingan surat
+                        </div>
+                        <p class="mb-0">
+                          Lorem Ipsum 1500-yillardan beri sanoatning standart qo'g'irchoq matni bo'lib kelgandi.
+                        </p>
+                      </div>
+                    {% endif %}
+                    {% endfor %}
+
+                    </div>          
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+
+<!-- Video qator -->
+            <div class="row" data-aos="fade-up">
+              <div class="col-sm-12 grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-lg-8">
+                        <div class="card-title">
+                        Video
+                        </div>
+                        <div class="row">
+                          {% for post in object_list %}
+                          {% if 6 < forloop.counter0 and 11 > forloop.counter0 %}
+                          <div class="col-sm-6 grid-margin">
+                            <div class="position-relative">
+                              <div class="rotate-img">
+                                {% if post.image %}
+                                <img
+                                  src="{{post.image.url}}"
+                                  alt="thumb"
+                                  class="img-fluid"
+                                />
+                                {% endif %}
+                              </div>
+                              <div class="badge-positioned w-90">
+                                <div
+                                  class="d-flex justify-content-between align-items-center"
+                                >
+                                  <span
+                                    class="badge badge-danger font-weight-bold"
+                                    >{{post.title}}</span
+                                  >
+                                  <div class="video-icon">
+                                    <i class="mdi mdi-play"></i>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          {% endif %}
+                          {% endfor %}
+                        </div>
+                        <div class="row">
+                        </div>
+                      </div>
+
+
+
+<!-- Video ong tomoni eng songi videolar qatori -->
+                      
+                      <div class="col-lg-4">
+                      
+                        <div
+                          class="d-flex justify-content-between align-items-center">
+                          <div class="card-title">
+                            Eng so'nggi video
+                          </div>
+                          <p class="mb-3">Hammasini ko'rish</p>
+                        </div>
+                        {% for post in object_list %}
+                        {% if 10 < forloop.counter0 and 18 > forloop.counter0 %}
+                        <div
+                          class="d-flex justify-content-between align-items-center border-bottom pb-2">
+                          <div class="div-w-80 mr-3">
+                            <div class="rotate-img">
+                              {% if post.image %}
+                              <img
+                                src="{{post.image.url}}"
+                                alt="thumb"
+                                class="img-fluid"
+                              />
+                              {% endif %}
+                            </div>
+                          </div>
+                          <h3 class="font-weight-600 mb-0">
+                            {{post.title}}
+                          </h3>
+                          
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+
+
+<!-- Sport nuri qatori chap tomoni -->
+            <div class="row" data-aos="fade-up">
+              <div class="col-sm-12">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-xl-6">
+                        <div class="card-title">
+                          Sport nuri
+                        </div>
+                        <div class="row">
+                          {% for post in object_list %}
+                          {% if 17 < forloop.counter0 and 19 > forloop.counter0 %}
+                          <div class="col-xl-6 col-lg-8 col-sm-6">
+                            <div class="rotate-img">
+                              {% if post.image %}
+                              <img
+                                src="{{post.image.url}}"
+                                alt="thumb"
+                                class="img-fluid"
+                              />
+                              {% endif %}
+                            </div>
+                            <h2 class="mt-3 text-primary mb-2">
+                              {{post.title}}
+                            </h2>
+                            <p class="fs-13 mb-1 text-muted">
+                              <span class="mr-2">Surat</span>10 daqiqa oldin olingan
+                            </p>
+                            <p class="my-3 fs-15">
+                              Lorem Ipsum 1500-yillardan beri, noma'lum printer olib kelganidan beri sanoatning standart qo'g'irchoq matni bo'lib kelgan.
+                            </p>
+                            <a href="#" class="font-weight-600 fs-16 text-dark"
+                              >Ko'proq o'qing</a>
+
+
+
+
+                          </div>
+                          <div class="col-xl-6 col-lg-4 col-sm-6">
+                            <div class="border-bottom pb-3 mb-3">
+                              {% for post in object_list %}
+                              {% if 18 < forloop.counter0 and 23 > forloop.counter0 %}
+                              <h3 class="font-weight-600 mb-0">
+                                {{post.title}}
+                              </h3>
+                              <p class="fs-13 text-muted mb-0">
+                                <span class="mr-2">Surat</span>10 daqiqa oldin olingan
+                              </p>
+                              <p class="mb-0">
+                                Bu sanoatning eng yaxshisi bo'ldi
+                              </p>
+                              {% endif %}
+                              {% endfor %}    
+                            </div>
+                          </div>
+                          {% endif %}
+                          {% endfor %}
+                        </div>
+                      </div>
+
+
+<!-- Sport nuri orta qatori -->
+
+                      <div class="col-xl-6">
+                        <div class="row">
+                          <div class="col-sm-6">
+                            <div class="card-title">
+                              Sport nuri
+                            </div>
+                            {% for post in object_list %}
+                            {% if 22 < forloop.counter0 and 25 > forloop.counter0 %}
+                            <div class="border-bottom pb-3">
+                              <div class="rotate-img">
+                                {% if post.image %}
+                                <img
+                                  src="{{post.image.url}}"
+                                  alt="thumb"
+                                  class="img-fluid"
+                                />
+                                {% endif %}
+                              </div>
+                              <p class="fs-16 font-weight-600 mb-0 mt-3">
+                                {{post.title}}
+                              </p>
+                              <p class="fs-13 text-muted mb-0">
+                                <span class="mr-2">Surat</span>10 daqiqa oldin olingan
+                              </p>
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+                          </div>
+
+
+
+
+<!-- Sport nuri ong tomoni Mshxur yangiliklar qatori -->
+
+                          <div class="col-sm-6">
+                            <div class="card-title">
+                              Mashhur yangiliklar
+                            </div>
+                            <div class="row">
+                              {% for post in object_list %}
+                              {% if 24 < forloop.counter0 and 28 > forloop.counter0 %}
+                              <div class="col-sm-12">
+                                <div class="border-bottom pb-3">
+                                  <div class="row">
+                                    <div class="col-sm-5 pr-2">
+                                      <div class="rotate-img">
+                                        {% if post.image %}
+                                        <img
+                                          src="{{post.image.url}}"
+                                          alt="thumb"
+                                          class="img-fluid w-100"
+                                        />
+                                        {% endif %}
+                                      </div>
+                                    </div>
+                                    <div class="col-sm-7 pl-2">
+                                      <p class="fs-16 font-weight-600 mb-0">
+                                        {{post.title}}
+                                      </p>
+                                      <p class="fs-13 text-muted mb-0">
+                                        <span class="mr-2">Surat</span>10 daqiqa oldin olingan surat
+                                      </p>
+                                      <p class="mb-0 fs-13">
+                                        Bu juda yaxshi bo'ldi
+                                      </p>
+                                    </div>
+                                  </div>
+
+                                </div>
+                              </div>
+                              {% endif %}
+                              {% endfor %}
+                            </div>
+                          </div>
+
+
+
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+{% endblock content %}
